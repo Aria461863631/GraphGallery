@@ -22,7 +22,7 @@ def test_device():
     device = parse_device("cpu", "P")
     assert isinstance(device, torch.device) and str(device) == 'cpu'
     device = parse_device(kind="P")
-    assert isinstance(device, torch.device) and str(device) == 'cpu'
+    assert isinstance(device, torch.device) and str(device) == 'cpu:0'
     #?? without gpu
     try:
         assert str(parse_device("gpu", "P")) == 'cuda'
